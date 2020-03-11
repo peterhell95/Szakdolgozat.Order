@@ -16,14 +16,14 @@ services:
          - POSTGRES_DB=postgres
     restart: unless-stopped
 # APP*****************************************
-  demo:
-    image: demo:latest
+  order:
+    image: order:latest
     network_mode: bridge
-    container_name: demo
+    container_name: order
     expose:
-      - 8080
+      - 8081
     ports:
-      - 8080:8080
+      - 8081:8081
     restart: unless-stopped
     depends_on:
       - postgres
