@@ -18,4 +18,8 @@ public class OrderDTO {
     private String delivery;
 
     private Long price;
+
+    private String name;
+
+    private String address;
 }

@@ -29,4 +29,11 @@ public class Order implements Serializable {
 
     @Column(name = "price")
     private Integer price;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "address")
+    private String address;
+
 }
