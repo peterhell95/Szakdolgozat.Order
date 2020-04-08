@@ -26,6 +26,12 @@ pipeline {
             }
         }
         
+        stage ('Docker Login') {
+            steps {
+                sh 'docker login --username=peterhell95 --email=peterhell95@gmail.com' 
+            }
+        }
+        
          stage ('Docker Push') {
             steps {
                 sh 'docker push peterhell95/order:jenkins' 
