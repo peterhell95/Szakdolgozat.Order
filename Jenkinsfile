@@ -14,15 +14,21 @@ pipeline {
             }
         }
 
-         stage ('Build') {
+         stage ('Maven Build') {
             steps {
                 sh 'mvn clean install' 
             }
         }
         
-         stage ('Docker') {
+         stage ('Docker Build') {
             steps {
                 sh 'docker build -t peterhell95/order:jenkins .' 
+            }
+        }
+        
+         stage ('Docker Push') {
+            steps {
+                sh 'docker push peterhell95/order:jenkins' 
             }
         }
     }
