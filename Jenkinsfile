@@ -28,7 +28,7 @@ pipeline {
         
         stage ('Docker Login') {
             steps {
-                sh 'docker login --username=peterhell95 --email=peterhell95@gmail.com' 
+                sh 'docker login --username=peterhell95' 
             }
         }
         
