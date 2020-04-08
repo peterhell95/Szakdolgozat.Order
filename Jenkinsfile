@@ -19,5 +19,11 @@ pipeline {
                 sh 'mvn clean install' 
             }
         }
+        
+         stage ('Docker') {
+            steps {
+                sh 'docker build -t peterhell95/order:jenkins .' 
+            }
+        }
     }
 }
