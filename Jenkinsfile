@@ -18,9 +18,6 @@ pipeline {
             steps {
                 sh 'mvn  install' 
             }
-            steps {
-                sh 'mvn  clean' 
-            }
         }
     }
 }
