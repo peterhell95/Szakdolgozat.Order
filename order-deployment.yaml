@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order
+  labels:
+    app: order
+spec:
+  selector:
+    matchLabels:
+      app: order
+  replicas: 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: order
+    spec:
+      containers:
+        - image: peterhell95/order:jenkins
+          imagePullPolicy: Always
+          name: order
+          ports:
+            - containerPort: 8081
